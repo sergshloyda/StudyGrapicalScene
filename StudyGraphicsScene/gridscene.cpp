@@ -4,9 +4,9 @@ GridScene::GridScene(QObject *parent)
 	: QGraphicsScene(parent)
 {
 	bg_image_=new QImage();
-	bg_image_->load("mm_paper.png");
-	this->setSceneRect(0,0, bg_image_->width(), bg_image_->height());
-	pixel_in_mm= bg_image_->width()/297;
+	//bg_image_->load("mm_paper.png");
+	//this->setSceneRect(0,0, bg_image_->width(), bg_image_->height());
+	//pixel_in_mm= bg_image_->width()/297;
 
 }
 
@@ -48,6 +48,18 @@ void GridScene::drawGrid()
 	}
 	for (int y=0; y<=height; y+=height/210)
 		gLines.append(addLine(0,y,width,y, QPen(Qt::green)));
+}
+
+void GridScene::drawPixmap()
+{
+	QPixmap pixmap;
+	pixmap.load("Test_img.jpg");
+	int width = sceneRect().width();     
+	int height =sceneRect().height(); 
+
+	//pixmap = pixmap.scaled(graphicsView->size());
+	QGraphicsPixmapItem* item = addPixmap(pixmap);
+	item->setPos(QPoint(-width/2,-height/2));
 }
 
 void GridScene::mousePressEvent(QGraphicsSceneMouseEvent * event)

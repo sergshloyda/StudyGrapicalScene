@@ -2,7 +2,7 @@
 #define GRIDSCENE_H
 
 #include <QGraphicsScene>
-
+#include <QPixmap>
 #include <QGraphicsSceneMouseEvent>
 #include <QTimer>
 #include <QDebug>
@@ -17,6 +17,7 @@ public:
 	~GridScene();
 	void drawCircle(const QPoint& center,int radius);
 	void drawGrid();
+	void drawPixmap();
 
 private:
 	MyPoint* myPoint;

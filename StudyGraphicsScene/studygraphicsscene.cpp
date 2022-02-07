@@ -36,8 +36,8 @@ void StudyGraphicsScene::slotTimer()
 {
 	timer->stop();
 	//scene->setSceneRect(0,0, ui.graphicsView->width() - 20, ui.graphicsView->height() - 20);
-scene->drawGrid();
-
+//scene->drawGrid();
+	scene->drawPixmap();
 scene->drawCircle(QPoint(10,10),50);
 
 
